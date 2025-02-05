@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gbi.kakari.mapper.DummyMapper">
+
+    <insert id="insertProduct">
+        -- product 테이블 데이터 삽입 (개별 매개변수 사용)
+        INSERT INTO product (product_name, price, product_image)
+        VALUES (#{productName}, #{price}, #{productImage})
+    </insert>
+
+    <insert id="insertProductColor">
+        -- productcolor 테이블 데이터 삽입 (개별 매개변수 사용)
+        INSERT INTO productcolor (product_id, color_name)
+        VALUES (#{productId}, #{colorName})
+    </insert>
+
+    <insert id="insertOptionType">
+        -- optiontype 테이블 데이터 삽입 (개별 매개변수 사용)
+        INSERT INTO optiontype (option_name)
+        VALUES (#{optionName})
+    </insert>
+
+    <insert id="insertProductOption">
+        -- productoption 테이블 데이터 삽입 (개별 매개변수 사용)
+        INSERT INTO productoption (product_id, option_type_id)
+        VALUES (#{productId}, #{optionTypeId})
+    </insert>
+
+    <insert id="insertUserInfo">
+        -- userinfo 테이블 데이터 삽입 (개별 매개변수 사용)
+        INSERT INTO userinfo (user_id, user_email, user_name, user_password, user_phone_num, user_role)
+        VALUES (#{userId}, #{userEmail}, #{userName}, #{userPassword}, #{userPhoneNum}, #{userRole})
+    </insert>
+
+    <insert id="insertPoint">
+        -- point 테이블 데이터 삽입 (개별 매개변수 사용)
+        INSERT INTO point (points, user_id)
+        VALUES (#{points}, #{userId})
+    </insert>
+
+    <insert id="insertRentLocation">
+        -- rentlocation 테이블 데이터 삽입 (개별 매개변수 사용)
+        INSERT INTO rentlocation (rent_location_name, rent_location_address, rent_location_phone_num)
+        VALUES (#{rentLocationName}, #{rentLocationAddress}, #{rentLocationPhoneNum})
+    </insert>
+
+</mapper>
